@@ -1,5 +1,5 @@
 import React from 'react';
-import { storePlusMinus } from './store';
+import { store } from './store';
 import {setPlusMinus} from './actions/index'
 import './PlusMinus.css'
 
@@ -8,7 +8,7 @@ const PlusMinus = () => {
       <div>
          
             <button className="btn plus" data-name='plus' onClick={dispatchAction}>+</button>
-            <div className="wind">{storePlusMinus.getState().num}</div>
+            <div className="wind">{store.getState().num}</div>
             <button className="btn minus" data-name='minus' onClick={dispatchAction}>-</button>
    
       </div>
@@ -17,7 +17,7 @@ const PlusMinus = () => {
 
 function dispatchAction(e) {
    const plusName = e.target.dataset.name
-   console.log(setPlusMinus(storePlusMinus.getState().num, plusName));
-   storePlusMinus.dispatch(setPlusMinus(storePlusMinus.getState().num, plusName))
+   console.log(setPlusMinus(store.getState().num, plusName));
+   store.dispatch(setPlusMinus(store.getState().num, plusName))
 }
 export default PlusMinus
