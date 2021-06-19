@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import HelloWord from './HelloWord'
+// import { useState } from 'react';
+import {store} from './store'
+import ButtonName from './ButtonName'
+import PlusMinus from './PlusMinus'
+// const arr =[1,2,3,4]
 
-function App() {
+
+const App = () => {
+  // const [name, setName] = useState('Kostya')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Redux</h1>
+      {/* <p>{arr.reduce((t,it) => t+it,0)}</p> */}
+      {/* <HelloWord name = {name}/> */}
+    
+      <HelloWord name = {store.getState().name}/>
+      <ButtonName names = {['Nir', 'Kostya', 'Alexey', 'Sammer', 'Dima']} />
+      <PlusMinus/>
     </div>
   );
 }
