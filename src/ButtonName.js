@@ -11,7 +11,10 @@ const ButtonName = ({names}) => {
    }
    return (
       <div>
-         {names.map((name,i) => <button key={i} data-name={name} onClick={dispatchBtnAction}> {name} </button>)}
+         {names.map((name,i) => 
+         <button key={i} data-name={name} onClick={dispatchBtnAction} 
+            style={{margin:'6px', backgroundColor:'blue', color:'white', padding:'4px', width:'70px'}}>
+             {name} </button>)}
       </div>
    )
 }
